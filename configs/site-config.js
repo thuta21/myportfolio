@@ -8,12 +8,12 @@ import {
 import { FiMail } from "react-icons/fi";
 
 const siteConfig = {
-  copyright: `Copyright © ${new Date().getFullYear()} Muhammad Ahmad. All Rights Reserved.`,
+  copyright: `Copyright © ${new Date().getFullYear()} Thuta Min Thway. All Rights Reserved.`,
   author: {
-    name: "Muhammad Ahmad",
+    name: "Thuta Min Thway",
     accounts: [
       {
-        url: "https://github.com/MA-Ahmad",
+        url: "https://github.com/thuta21",
         label: "Github Account",
         type: "gray",
         icon: <FaGithub />

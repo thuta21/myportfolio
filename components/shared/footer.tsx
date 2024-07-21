@@ -41,7 +41,7 @@ const Footer = () => {
           fontSize="sm"
           color={useColorModeValue("gray.500", "gray.200")}
         >
-          © {new Date().getFullYear()} Muhammad Ahmad{" "}
+          © {new Date().getFullYear()} Thuta Min Thway{" "}
         </Text>
         {/* <Box fontSize="md" textAlign="left">
         Website built with

@@ -7,7 +7,7 @@ import { getDevtoPosts } from 'lib/fetchPosts'
 const Index: NextPage<BlogPostProps> = (props) => {
   const { posts } = props
   return (
-    <PageLayout title="Muhammad Ahmad - Full Stack Developer">
+    <PageLayout title="Thuta Min Thway - Full Stack Developer">
       <Home posts={posts} />
     </PageLayout>
   )

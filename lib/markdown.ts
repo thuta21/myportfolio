@@ -1,5 +1,5 @@
 import { unified } from 'unified';
-import parse from 'remark-parse';
+// import parse from 'remark-parse';
 import remarkHtml from 'remark-html';
 import matter from 'gray-matter';
 import stripHtmlComments from 'strip-html-comments';
@@ -26,11 +26,7 @@ export const convertMarkdownToHtml = (markdown: string): string => {
 
   // return String(html);
 
-  const html = unified()
-    .use(parse)
-    .use(remarkHtml)
-    .processSync(stripHtmlComments(content))
-    .toString();
+  const html = unified().use(remarkHtml).processSync(stripHtmlComments(content)).toString();
 
   return html;
 };

@@ -67,7 +67,7 @@ export const companies = [
 
 export const institutes = [
   {
-    short_title: 'FAST - NUCES',
+    short_title: 'University of The People',
     title: 'University of The People',
     alt: 'Nuces image',
     role: "Bachelor's Degree in Computer Science",
@@ -95,10 +95,10 @@ export const institutes = [
     // ]
   },
   {
-    short_title: 'FAST - NUCES',
-    title: 'Dagon University',
+    short_title: 'Dagon University, Myanmar',
+    title: 'Dagon University, Myanmar',
     alt: 'Nuces image',
-    role: 'Dagon University Myanmar',
+    role: 'Bechelor of Computer Science',
     skills: ['project management', 'web development', 'data structures'],
     period: '2020 - 2022',
     startingYear: '2020'
