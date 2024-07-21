@@ -127,7 +127,7 @@ const Home: React.FC<BlogPostProps> = (props) => {
           <Box as="h2" fontSize="2xl" fontWeight="400" textAlign="left">
             My name is{' '}
             <Box as="strong" fontWeight="600">
-              Ahmad
+              Thuta Min Thway
             </Box>{' '}
             and I&apos;m a{' '}
             <Box as="span" whiteSpace="nowrap">
@@ -138,7 +138,7 @@ const Home: React.FC<BlogPostProps> = (props) => {
             </Box>
             from{' '}
             <Box as="span" whiteSpace="nowrap">
-              Pakistan 🇵🇰
+              Thailand 🇹🇭
             </Box>
           </Box>
           <Box as="h2" fontSize="2xl" fontWeight="400" mt={5} textAlign="left">

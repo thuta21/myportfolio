@@ -18,6 +18,8 @@ type PostsPayload = {
 
 async function getPosts(): Promise<PostsPayload> {
   const res = await fetch(API_URL);
+  console.log('getPosts res:', res.json());
+
   return res.json();
 }
 
@@ -38,6 +40,8 @@ export const getDevtoPosts = async () => {
     throw new Error(`Error fetching... Status code: ${res.status}, ${res.statusText}`);
   }
   const dev_posts = await res.json();
+  console.log('dev_posts:', dev_posts);
+
   return dev_posts;
 };
 
