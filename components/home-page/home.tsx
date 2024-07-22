@@ -4,20 +4,14 @@ import {
   Avatar,
   Box,
   Text,
-  Badge,
   Stack,
-  Link,
-  UnorderedList,
-  ListItem,
   useColorModeValue
 } from '@chakra-ui/react';
 import { MotionBox, MotionFlex } from 'components/shared/animations/motion';
 import Header from 'components/shared/header';
-import NextLink from 'next/link';
 import { useLinkColor } from 'components/theme';
 import PopularArticles from './PopularArticles';
 import { BlogPostProps } from 'interfaces/interface';
-import { newContent } from 'data/data';
 
 const ANIMATION_DURATION = 0.5;
 const ORANGE = '#ff9400';
@@ -199,25 +193,12 @@ const ContentBox = ({ linkColor }) => {
         fromcolor="blue.400"
         tocolor="red.500"
       >
-        Content:
+        <a className='px-3' href="thutaminthway.pdf" download="thutaminthway.pdf">
+            Click Here To Download CV
+        </a>
       </Text>
-      <UnorderedList textAlign="left" paddingLeft={5} m={0}>
-        {newContent.map((content, index) => (
-          <ListItem key={index}>
-            <NextLink href={content.link} passHref>
-              <Link color={linkColor}>
-                {content.text}
-                {content.showNewTag && (
-                  <Badge ml="1" colorScheme="green">
-                    New
-                  </Badge>
-                )}
-              </Link>
-            </NextLink>
-          </ListItem>
-        ))}
-      </UnorderedList>
     </Stack>
+
   );
 };
 

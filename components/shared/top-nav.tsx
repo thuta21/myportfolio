@@ -38,9 +38,11 @@ const webLinks = [
 
 const mobileLinks = [
   // { name: 'Projects', path: '/projects' },
+  { name: 'Tech Stack', path: '/tech-stack' },
   { name: 'Open Source', path: '/open-source' },
   { name: 'Blog', path: '/blog' },
-  { name: 'Changelog', path: '/changelog' }
+  // { name: 'Changelog', path: '/changelog' },
+  { name: "Developer Story", path: "/developer-story" }
 ];
 
 const dropdownLinks = [

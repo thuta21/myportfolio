@@ -1,5 +1,5 @@
 import useSWR from 'swr';
-import { DEVTO_API_URL } from 'data/constants';
+import { DEVTO_API_URL, DEVTO_USERNAME } from 'data/constants';
 
 const API_URL = '/api/posts/';
 
@@ -18,8 +18,6 @@ type PostsPayload = {
 
 async function getPosts(): Promise<PostsPayload> {
   const res = await fetch(API_URL);
-  console.log('getPosts res:', res.json());
-
   return res.json();
 }
 
@@ -34,13 +32,12 @@ export const getDbPosts = () => {
 };
 
 export const getDevtoPosts = async () => {
-  const res = await fetch(`${DEVTO_API_URL}/articles?username=${process.env.DEVTO_USERNAME}`);
+  const res = await fetch(`${DEVTO_API_URL}/articles?username=${DEVTO_USERNAME}`);
 
   if (res.status < 200 || res.status >= 300) {
     throw new Error(`Error fetching... Status code: ${res.status}, ${res.statusText}`);
   }
   const dev_posts = await res.json();
-  console.log('dev_posts:', dev_posts);
 
   return dev_posts;
 };
