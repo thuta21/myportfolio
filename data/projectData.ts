@@ -1,73 +1,56 @@
 export const projectsList = [
   {
-    title: 'Smata',
-    imageLight: '/assets/images/projects/cover/smata.png',
+    title: 'Balloons Over Bagan',
+    imageLight: '/assets/images/projects/balloon-over-bagans.png',
     blurHash: 'L4ADc400P*Zi4Tu1y;Qo00pH#YXl',
-    site: 'https://smata.com/',
+    site: 'https://standby.balloonsoverbagan.com/quick-buy-landing',
     description:
-      'SMATA IS AN ALL-IN-ONE CLOUD-BASED SOLUTION, INTEGRATING MANAGEMENT, COMMUNICATION & ACCOUNTING FUNCTIONS.',
-    techStack: ['Rails', 'React', 'Javascript']
+      'Designed and implemented a ticketing system for the sale and monitoring of balloons tickets. Successfully integrated third-party payment options, including 2c2p and Wave Pay, to enhance payment functionalities.',
+    techStack: ['Laravel', 'Livewire', 'JavaScript']
   },
   {
-    title: 'Peterpitch',
-    imageLight: '/assets/images/projects/cover/peterpitch.png',
+    title: 'Inflight Photos For Balloons Over Bagan',
+    imageLight: '/assets/images/projects/inflight.png',
     blurHash: 'L4ADc400P*Zi4Tu1y;Qo00pH#YXl',
-    site: 'https://peterpitch.com/',
+    site: 'https://inflight.balloonsoverasia.com/',
     description:
-      'Peterpitch is a tool that takes the fun in your company seriously and turns your meetings into real performance boosters.',
-    techStack: ['Rails', 'React', 'Javascript']
+      'Developed a photo download functionality via email for balloon riders, allowing individuals to easily access and download their own ride photos.',
+    techStack: ['PHP', 'Laravel']
   },
   {
-    title: 'TemplatesKart',
-    imageLight: '/assets/images/projects/cover/templateskart.png',
+    title: 'The GoodLife by CMHL',
+    imageLight: '/assets/images/projects/city.png',
     blurHash: 'L4ADc400P*Zi4Tu1y;Qo00pH#YXl',
-    site: 'https://templateskart.com',
-    gitHub: 'https://github.com/MA-Ahmad/templatesKart',
+    site: 'https://www.cityrewards.com.mm/thegoodlife',
     description:
-      'TemplatesKart provides the best Chakra UI templates. Production-ready hand crafted Projects and Components built on top of ChakraUI.',
-    techStack: ['React', 'Nextjs', 'ChakraUI']
+      'Contributed to the development of a lifestyle magazine aimed at providing comprehensive solutions for individuals in their busy daily lives. Utilized October CMS (Laravel) for robust content management and Leaflet for map rendering to enhance user experience.',
+    techStack: ['PHP', 'October CMS']
   },
   {
-    title: 'Notch',
-    site: 'https://www.hellonotch.com/',
-    imageLight: '/assets/images/projects/cover/notch.png',
-    blurHash: 'L0Aer?tjH[tPyAayj[j[00ay%xkB',
+    title: 'Synpitarn',
+    imageLight: '/assets/images/projects/synpitarn.png',
+    blurHash: 'L4ADc400P*Zi4Tu1y;Qo00pH#YXl',
+    site: 'https://www.synpitarn.com/',
     description:
-      'This is a project management website for design and procurement teams. It helps to collaborate and manage all of your floor plans in one place.',
-    techStack: ['Rails', 'Javascript']
+      'Dedicated to enhancing individual well-being, I have actively contributed to a financial service company, delivering efficient financial management services with a focus on optimizing fund utilization.',
+    techStack: ['Laravel', 'Vuejs']
   },
   {
-    title: 'Workof Ecommerce',
-    imageLight: '/assets/images/projects/cover/workof.png',
-    blurHash: 'L2M5%%0000EN00I:-oIp00kC?^sl',
-    site: 'https://workof.com/',
+    title: 'Heal By Pun Hlaing',
+    imageLight: '/assets/images/projects/heal.png',
+    blurHash: 'L4ADc400P*Zi4Tu1y;Qo00pH#YXl',
+    site: 'https://punhlainghospitals.com/heal-app/',
     description:
-      'This is an Ecommerce furniture site. It provides a single platform to multiple vendors where they can put their products on sale.',
-    techStack: ['Rails', 'Javascript']
+      "Developed and launched Myanmar's first hospital-led telehealth app, HEAL by Pun Hlaing, offering 24/7 on-demand healthcare services. The app empowers users to manage their health proactively and adopt an active lifestyle, leveraging Pun Hlaing Hospitals' nationwide healthcare network. Designed to overcome accessibility challenges, HEAL provides timely medical support to users, including those in remote areas. Taglined 'Your Health in Your Hands,' it offers Myanmar's mobile-first population the convenience of accessing healthcare services and information anytime, anywhere.",
+    techStack: ['Laravel', 'Vuejs']
   },
   {
-    title: 'Souq of Qatar',
-    imageLight: '/assets/images/projects/cover/souq.png',
-    blurHash: 'L1O^uE0679I00AGT?.H{00y7p2tK',
-    site: 'https://www.souqofqatar.com/',
+    title: 'Note taking',
+    imageLight: '/assets/images/projects/note-taking-one.png',
+    blurHash: 'L4ADc400P*Zi4Tu1y;Qo00pH#YXl',
+    site: 'https://github.com/thuta21/note-taking-app',
     description:
-      'Souq of Qatar is online comparison website. This website is independent of any retailers, it displays the products of all the major stores.',
-    techStack: ['Rails', 'Javascript']
-  },
-  {
-    title: 'GoSave',
-    imageLight: '/assets/images/projects/cover/gosave.png',
-    blurHash: 'L09sWSxdH;s?%6axWAfk00V?%jax',
-    site: 'https://gosavehq.com/',
-    description: `The GoSave app let's you send allowances, assign chores, and approve spending all from your smartphone.`,
-    techStack: ['Rails']
-  },
-  {
-    title: 'Hiredroid',
-    imageLight: '/assets/images/projects/cover/hiredroid.png',
-    blurHash: 'L09sWSxdH;s?%6axWAfk00V?%jax',
-    site: 'https://hiredroid.com',
-    description: `Hiredroid help professionals reach the very pinnacle and stay there. For professionals who aspire perfection, we have made it easy for you by introducing skill-based hiring system, to help you attract the best talent from around the world.`,
-    techStack: ['React', 'Nodejs']
+      "Note taking app using Note and React. It's a simple note taking app where you can add, edit and delete notes.",
+    techStack: ['Laravel', 'Reactjs']
   }
 ];

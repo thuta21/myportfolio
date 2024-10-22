@@ -19,7 +19,7 @@ import matter from 'gray-matter';
 import { motion, AnimatePresence } from 'framer-motion';
 import PageLayout from 'components/layouts/pageLayout';
 import { BiSearch } from 'react-icons/bi';
-import { getDbPosts, getDevtoPosts } from 'lib/fetchPosts';
+import { getDbPosts, getDevtoPosts, getMediumPosts } from 'lib/fetchPosts';
 
 const TURQUOISE = '#06b6d4';
 
@@ -31,6 +31,7 @@ const Posts = ({ posts }) => {
     const searchContent = data.title + data.description;
     return searchContent.toLowerCase().includes(searchValue.toLowerCase());
   });
+
   filteredBlogPosts?.sort((a, b) => +new Date(b.published_at) - +new Date(a.published_at));
 
   const getPostLikes = (post) => {
@@ -105,34 +106,27 @@ const root = process.cwd();
 
 export const getServerSideProps: GetServerSideProps = async () => {
   let devtoPosts = await getDevtoPosts();
+  let mediumPosts = await getMediumPosts();
 
   const paths = fs.readdirSync(path.join(root, 'data', 'posts')).map((p) => p.replace(/\.mdx/, ''));
   const localPosts = [];
   paths.map((p) => {
     const markdownWithMeta = fs.readFileSync(path.join(root, 'data', 'posts', `${p}.mdx`), 'utf-8');
     const { data: frontmatter } = matter(markdownWithMeta);
-    const devPost = devtoPosts.filter(
-      (data) =>
-        !data.canonical_url.includes('dev.to') && data.canonical_url.split('/blog/')[1] === p
-    )[0];
 
     localPosts.push({
       slug: p,
       title: frontmatter.title,
       description: frontmatter.description,
       published_at: frontmatter.published_at,
-      comments_count:
-        (frontmatter.comments_count ? frontmatter.comments_count : devPost?.comments_count) || 0,
-      public_reactions_count:
-        (frontmatter.public_reactions_count
-          ? frontmatter.public_reactions_count
-          : devPost?.public_reactions_count) || 0,
-      tag_list: frontmatter.tags
+      comments_count: frontmatter.comments_count || 0,
+      public_reactions_count: frontmatter.public_reactions_count || 0,
+      tag_list: frontmatter.tags,
+      source: 'local'
     });
   });
 
-  devtoPosts = devtoPosts.filter((data) => data.canonical_url.includes('dev.to'));
-  const posts = [...localPosts, ...devtoPosts];
+  const posts = [...localPosts, ...devtoPosts, ...mediumPosts];
 
   if (!posts) {
     return {

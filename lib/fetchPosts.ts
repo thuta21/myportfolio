@@ -2,6 +2,7 @@ import useSWR from 'swr';
 import { DEVTO_API_URL, DEVTO_USERNAME } from 'data/constants';
 
 const API_URL = '/api/posts/';
+const MEDIUM_API_URL = 'https://v1.nocodeapi.com/thutaminthway/medium/QzhVdXjtYfCBIGZf';
 
 type PostProps = {
   id: string;
@@ -10,6 +11,7 @@ type PostProps = {
   likes: number;
   views: number;
   createdAt: Date;
+  source: string; // new field to track whether the post is from Medium or DEV.to
 };
 
 type PostsPayload = {
@@ -39,19 +41,29 @@ export const getDevtoPosts = async () => {
   }
   const dev_posts = await res.json();
 
-  return dev_posts;
+  return dev_posts.map((post) => ({
+    slug: post.slug,
+    title: post.title,
+    description: post.description,
+    published_at: post.published_at,
+    likes: post.public_reactions_count || 0,
+    source: 'devto'
+  }));
 };
 
-// export const getDevtoPosts = async () => {
-//   const params = { username: process.env.DEVTO_USERNAME, per_page: 1000 };
-//   const headers = { "api-key": process.env.DEVTO_APIKEY };
+export const getMediumPosts = async () => {
+  const res = await fetch(MEDIUM_API_URL);
+  if (res.status < 200 || res.status >= 300) {
+    throw new Error(`Error fetching Medium posts... Status code: ${res.status}, ${res.statusText}`);
+  }
+  const medium_posts = await res.json();
 
-//   const { data }: AxiosResponse = await axios.get(
-//     `${DEVTO_APIURL}/articles/me`,
-//     {
-//       params,
-//       headers
-//     }
-//   );
-//   return data;
-// };
+  return medium_posts.map((post) => ({
+    slug: post.link.split('/').pop(),
+    title: post.title,
+    description: post.content.substring(0, 200), // Example to extract first 200 chars
+    published_at: post.published,
+    likes: 0, // Medium doesn't provide likes data in this API
+    source: 'medium'
+  }));
+};
