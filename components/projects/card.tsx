@@ -53,14 +53,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           rounded="md"
         />
         <VStack align="start" justify="flex-start">
-          <VStack spacing={0} align="start">
+          <VStack spacing={1} align="start">
             <motion.div layout>
               <HStack>
                 <Text
                   as={Link}
                   href={link}
                   fontWeight="bold"
-                  fontSize="md"
+                  fontSize="lg"
                   noOfLines={1}
                   onClick={(e) => e.stopPropagation()}
                   color={linkColor}
@@ -68,13 +68,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                 >
                   {title}
                 </Text>
-                <HStack spacing="1">
-                  {technologies.map((tech, index) => (
-                    <Tag key={index} name={tech} mt="1px" interactive={false} mr="auto" />
-                  ))}
-                </HStack>
               </HStack>
             </motion.div>
+            <HStack spacing="1">
+              {technologies.map((tech, index) => (
+                <Tag key={index} name={tech} mt="1px" interactive={false} mr="auto" />
+              ))}
+            </HStack>
             <AnimatePresence>
               <motion.div
                 layout

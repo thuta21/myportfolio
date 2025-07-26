@@ -23,9 +23,9 @@ import { getDbPosts, getDevtoPosts, getMediumPosts } from 'lib/fetchPosts';
 
 const TURQUOISE = '#06b6d4';
 
-const Posts = ({ posts }) => {
+const Posts = ({ posts: initialPosts }) => {
   const [searchValue, setSearchValue] = useState('');
-  const { dbPosts, isLoading } = getDbPosts();
+  const [posts, setPosts] = useState(initialPosts);
 
   const filteredBlogPosts = posts.filter((data) => {
     const searchContent = data.title + data.description;
@@ -34,71 +34,60 @@ const Posts = ({ posts }) => {
 
   filteredBlogPosts?.sort((a, b) => +new Date(b.published_at) - +new Date(a.published_at));
 
-  const getPostLikes = (post) => {
-    const p = dbPosts?.filter((p) => p.slug === post.slug)[0];
-    return p?.likes || 0;
-  };
-
   return (
-    <>
-      <PageLayout title="Blog" description="A list of all articles and posts!">
-        <PageSlideFade>
-          <Header underlineColor={TURQUOISE} mt={0} mb={6}>
-            Featured Articles
-          </Header>
-          <InputGroup maxW="30rem">
-            <Input
-              placeholder="Search articles"
-              onChange={(e) => setSearchValue(e.target.value)}
-              background={useColorModeValue('gray.100', '#1e2533')}
-            />
-            <InputRightElement>
-              <Icon as={BiSearch} w={6} h={6} />
-            </InputRightElement>
-          </InputGroup>
-          <StaggerChildren>
-            <Stack spacing={4} mt={6}>
-              <AnimatePresence>
-                {!filteredBlogPosts.length && (
-                  <Heading as="h1" pt={10} pb={10}>
-                    No articles found
-                  </Heading>
-                )}
-                {filteredBlogPosts.map((post, i) => (
-                  <motion.div
-                    initial="hidden"
-                    animate="visible"
-                    variants={{
-                      hidden: (i) => ({
-                        opacity: 0,
-                        y: -30 * i
-                      }),
-                      visible: (i) => ({
-                        opacity: 1,
-                        y: 0,
-                        transition: {
-                          delay: i * 0.1
-                        }
-                      })
-                    }}
-                    custom={i}
-                    key={post.slug}
-                  >
-                    <MotionBox whileHover={{ y: -5 }} key={i}>
-                      <PostCard
-                        post={post}
-                        postDbLikes={getPostLikes(post)}
-                        isLoading={isLoading}
-                      />
-                    </MotionBox>
-                  </motion.div>
-                ))}
-              </AnimatePresence>
-            </Stack>
-          </StaggerChildren>
-        </PageSlideFade>
-      </PageLayout>
-    </>
+    <PageLayout title="Blog" description="A list of all articles and posts!">
+      <PageSlideFade>
+        <Header underlineColor={TURQUOISE} mt={0} mb={6}>
+          Featured Articles
+        </Header>
+        <InputGroup maxW="30rem">
+          <Input
+            placeholder="Search articles"
+            onChange={(e) => setSearchValue(e.target.value)}
+            background={useColorModeValue('gray.100', '#1e2533')}
+          />
+          <InputRightElement>
+            <Icon as={BiSearch} w={6} h={6} />
+          </InputRightElement>
+        </InputGroup>
+        <StaggerChildren>
+          <Stack spacing={4} mt={6}>
+            <AnimatePresence>
+              {!filteredBlogPosts.length && (
+                <Heading as="h1" pt={10} pb={10}>
+                  No articles found
+                </Heading>
+              )}
+              {filteredBlogPosts.map((post, i) => (
+                <motion.div
+                  initial="hidden"
+                  animate="visible"
+                  variants={{
+                    hidden: (i) => ({
+                      opacity: 0,
+                      y: -30 * i
+                    }),
+                    visible: (i) => ({
+                      opacity: 1,
+                      y: 0,
+                      transition: {
+                        delay: i * 0.1
+                      }
+                    })
+                  }}
+                  custom={i}
+                  key={post.slug}
+                >
+                  <MotionBox whileHover={{ y: -5 }} key={i}>
+                    <PostCard post={post} isLoading={false} postDbLikes={0} />
+                  </MotionBox>
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </Stack>
+        </StaggerChildren>
+      </PageSlideFade>
+    </PageLayout>
   );
 };
 

@@ -2,7 +2,7 @@ export const companies = [
   {
     title: 'Onenex',
     alt: 'onenex',
-    role: 'Mid Software Engineer',
+    role: 'Software Engineer',
     skills: [
       'html',
       'css',
@@ -42,13 +42,13 @@ export const companies = [
       'aws',
       'digitalocean'
     ],
-    period: 'Oct 2022 - May 2024',
+    period: 'July 2022 - May 2024',
     logo: '/assets/images/logos/onenex.png'
   },
   {
-    title: 'Onenex',
-    alt: 'onenex',
-    role: 'Internship Web Developer',
+    title: 'Freelance',
+    alt: 'freelance',
+    role: 'Freelance Web Developer',
     skills: [
       'html',
       'css',
@@ -58,11 +58,15 @@ export const companies = [
       'mysql',
       'laravel',
       'nodejs',
-      'adonisjs'
+      'adonisjs',
+      'vuejs',
+      'nuxtjs',
+      'aws',
+      'digitalocean'
     ],
-    period: 'July 2022 - Sept 2022',
-    logo: '/assets/images/logos/onenex.png'
-  }
+    period: '2020 - 2022',
+    logo: '/assets/images/logos/freelance.png'
+  },
 ];
 
 export const institutes = [
@@ -125,131 +129,227 @@ export const institutes = [
 ];
 
 export const skillsArray = [
+  // Development (Frontend)
   {
-    name: 'PHP',
-    description: 'Web development',
-    link: 'https://php.net/',
+    name: 'HTML',
+    description: 'Web markup',
+    link: 'https://developer.mozilla.org/en-US/docs/Web/HTML',
     type: 'development',
-    image: '/assets/images/skills/php.png'
+    image: '/assets/images/skills/html-5.png'
   },
   {
-    name: 'Laravel',
-    description: 'Web development',
-    link: 'https://laravel.com/',
-    type: 'development',
-    image: '/assets/images/skills/laravel.png'
-  },
-  {
-    name: 'Nodejs',
-    description: 'Web development',
-    link: 'https://nodejs.org/',
-    type: 'development',
-    image: '/assets/images/skills/nodejs.png'
-  },
-  {
-    name: 'Nestjs',
-    description: 'Web development',
-    link: 'https://nestjs.com/',
-    type: 'development',
-    image: '/assets/images/skills/nestjs.png'
-  },
-  {
-    name: 'React',
-    description: 'Web development',
-    link: 'https://reactjs.org/',
-    type: 'development',
-    image: '/assets/images/skills/react.png'
-  },
-  {
-    name: 'Python',
-    description: 'Web development, scrapping',
-    link: 'https://www.python.org/',
-    type: 'development',
-    image: '/assets/images/skills/python.png'
-  },
-  {
-    name: 'Javascript',
+    name: 'JavaScript',
     description: 'Web development',
     link: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
     type: 'development',
     image: '/assets/images/skills/javascript.png'
   },
   {
-    name: 'Typescript',
-    description: 'Web development',
+    name: 'TypeScript',
+    description: 'Typed JavaScript',
     link: 'https://www.typescriptlang.org/',
     type: 'development',
     image: '/assets/images/skills/typescript.png'
   },
   {
-    name: 'Html5',
-    description: 'Web layouts',
-    link: 'https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5',
+    name: 'React.js',
+    description: 'Frontend library',
+    link: 'https://reactjs.org/',
     type: 'development',
-    image: '/assets/images/skills/html-5.png'
+    image: '/assets/images/skills/react.png'
   },
   {
-    name: 'Css3',
-    description: 'Web design',
+    name: 'Vue.js',
+    description: 'Frontend framework',
+    link: 'https://vuejs.org/',
+    type: 'development',
+    image: '/assets/images/skills/vuejs.png'
+  },
+  {
+    name: 'Nuxt.js',
+    description: 'Vue framework',
+    link: 'https://nuxtjs.org/',
+    type: 'development',
+    image: '/assets/images/skills/nuxt.png'
+  },
+  {
+    name: 'Alpine.js',
+    description: 'Minimalist framework',
+    link: 'https://alpinejs.dev/',
+    type: 'development',
+    image: '/assets/images/skills/alpinejs.png'
+  },
+  // Development (Backend)
+  {
+    name: 'PHP',
+    description: 'Backend scripting',
+    link: 'https://php.net/',
+    type: 'development',
+    image: '/assets/images/skills/php.png'
+  },
+  {
+    name: 'Laravel',
+    description: 'PHP framework',
+    link: 'https://laravel.com/',
+    type: 'development',
+    image: '/assets/images/skills/laravel.png'
+  },
+  {
+    name: 'Livewire',
+    description: 'Full-stack framework',
+    link: 'https://laravel-livewire.com/',
+    type: 'development',
+    image: '/assets/images/skills/livewire.png'
+  },
+  {
+    name: 'Lumen',
+    description: 'PHP micro-framework',
+    link: 'https://lumen.laravel.com/',
+    type: 'development',
+    image: '/assets/images/skills/lumen.png'
+  },
+  {
+    name: 'Node.js',
+    description: 'JS runtime',
+    link: 'https://nodejs.org/',
+    type: 'development',
+    image: '/assets/images/skills/nodejs.png'
+  },
+  {
+    name: 'Express.js',
+    description: 'Node.js framework',
+    link: 'https://expressjs.com/',
+    type: 'development',
+    image: '/assets/images/skills/Express.png'
+  },
+  {
+    name: 'AdonisJS',
+    description: 'Node.js framework',
+    link: 'https://adonisjs.com/',
+    type: 'development',
+    image: '/assets/images/skills/AdonisJS.png'
+  },
+  {
+    name: 'NestJS',
+    description: 'Node.js framework',
+    link: 'https://nestjs.com/',
+    type: 'development',
+    image: '/assets/images/skills/nestjs.png'
+  },
+  {
+    name: 'Python',
+    description: 'General-purpose language',
+    link: 'https://www.python.org/',
+    type: 'development',
+    image: '/assets/images/skills/python.png'
+  },
+  {
+    name: 'Django',
+    description: 'Python framework',
+    link: 'https://www.djangoproject.com/',
+    type: 'development',
+    image: '/assets/images/skills/django.png'
+  },
+  {
+    name: 'GoLang',
+    description: 'Compiled language',
+    link: 'https://golang.org/',
+    type: 'development',
+    image: '/assets/images/skills/golang.png'
+  },
+  {
+    name: 'GraphQL',
+    description: 'API query language',
+    link: 'https://graphql.org/',
+    type: 'development',
+    image: '/assets/images/skills/graphql.png'
+  },
+  // Design
+  {
+    name: 'CSS',
+    description: 'Web styling',
     link: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
     type: 'design',
     image: '/assets/images/skills/css3.png'
   },
   {
     name: 'Bootstrap',
-    description: 'Web design',
+    description: 'CSS framework',
     link: 'https://getbootstrap.com/',
     type: 'design',
     image: '/assets/images/skills/bootstrap.png'
   },
   {
     name: 'Tailwind CSS',
-    description: 'Web design',
+    description: 'Utility-first CSS',
     link: 'https://tailwindcss.com/',
     type: 'design',
-    image: '/assets/images/skills/tailwind.png'
+    image: '/assets/images/skills/tailwindcss.png'
   },
   {
-    name: 'Postgres',
-    description: 'Database',
-    link: 'https://www.postgresql.org/',
-    type: 'database',
-    image: '/assets/images/skills/postgresql.png'
+    name: 'Figma',
+    description: 'Collaborative Design',
+    link: 'https://www.figma.com/',
+    type: 'design',
+    image: '/assets/images/skills/figma.png'
   },
+  // Databases
   {
-    name: 'Mysql',
-    description: 'Database',
+    name: 'MySQL',
+    description: 'Relational database',
     link: 'https://www.mysql.com/',
     type: 'database',
     image: '/assets/images/skills/mysql.png'
   },
   {
-    name: 'Redis',
-    description: 'Database',
-    link: 'https://redis.io/',
+    name: 'PostgreSQL',
+    description: 'Relational database',
+    link: 'https://www.postgresql.org/',
     type: 'database',
-    image: '/assets/images/skills/redis.png'
+    image: '/assets/images/skills/postgresql.png'
   },
   {
-    name: 'Heroku',
-    description: 'Devops',
-    link: 'https://www.heroku.com/',
-    type: 'devops',
-    image: '/assets/images/skills/heroku.png'
+    name: 'SQLite',
+    description: 'Embedded database',
+    link: 'https://www.sqlite.org/',
+    type: 'database',
+    image: '/assets/images/skills/sqlite.png'
   },
+  {
+    name: 'MongoDB',
+    description: 'NoSQL database',
+    link: 'https://www.mongodb.com/',
+    type: 'database',
+    image: '/assets/images/skills/mongodb.png'
+  },
+  // DevOps & Tools
   {
     name: 'AWS',
-    description: 'Devops',
+    description: 'Cloud services',
     link: 'https://aws.amazon.com/',
     type: 'devops',
     image: 'assets/images/skills/aws.png'
   },
   {
-    name: 'Digital Ocean',
-    description: 'Devops',
-    link: 'https://www.digitalocean.com/',
+    name: 'Docker',
+    description: 'Containerization',
+    link: 'https://www.docker.com/',
     type: 'devops',
-    image: '/assets/images/skills/digital-ocean.png'
+    image: '/assets/images/skills/docker.png'
+  },
+  {
+    name: 'Git',
+    description: 'Version control',
+    link: 'https://git-scm.com/',
+    type: 'devops',
+    image: '/assets/images/skills/git.png'
+  },
+  {
+    name: 'Sentry',
+    description: 'Error tracking',
+    link: 'https://sentry.io/',
+    type: 'devops',
+    image: '/assets/images/skills/sentry.png'
   },
   {
     name: 'Nginx',
@@ -258,19 +358,49 @@ export const skillsArray = [
     type: 'devops',
     image: '/assets/images/skills/nginx.png'
   },
+  // Testing
+  {
+    name: 'Pest',
+    description: 'PHP testing framework',
+    link: 'https://pestphp.com/',
+    type: 'testing',
+    image: '/assets/images/skills/pest.png'
+  },
+  {
+    name: 'PHPUnit',
+    description: 'PHP testing framework',
+    link: 'https://phpunit.de/',
+    type: 'testing',
+    image: '/assets/images/skills/phpunit.png'
+  },
+  // Additional Tools
+  {
+    name: 'Jira',
+    description: 'Project management',
+    link: 'https://www.atlassian.com/software/jira',
+    type: 'tools',
+    image: '/assets/images/skills/jira.png'
+  },
+  {
+    name: 'ClickUp',
+    description: 'Project management',
+    link: 'https://clickup.com/',
+    type: 'tools',
+    image: '/assets/images/skills/clickup.png'
+  },
   {
     name: 'Visual Studio Code',
-    description: 'Code editor of choice',
+    description: 'Code editor',
     link: 'https://code.visualstudio.com/',
-    type: 'development',
+    type: 'tools',
     image: '/assets/images/skills/vscode.png'
   },
   {
-    name: 'Figma',
-    description: 'Collaborative Design',
-    link: 'https://www.figma.com/',
-    type: 'design',
-    image: '/assets/images/skills/figma.png'
+    name: 'Cursor',
+    description: 'Code editor',
+    link: 'https://cursor.com/',
+    type: 'tools',
+    image: '/assets/images/skills/cursor.png'
   }
 ];
 

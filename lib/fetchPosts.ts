@@ -2,7 +2,7 @@ import useSWR from 'swr';
 import { DEVTO_API_URL, DEVTO_USERNAME } from 'data/constants';
 
 const API_URL = '/api/posts/';
-const MEDIUM_API_URL = 'https://v1.nocodeapi.com/thutaminthway/medium/QzhVdXjtYfCBIGZf';
+const MEDIUM_API_URL = 'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@thutaminthway.dev';
 
 type PostProps = {
   id: string;
@@ -56,14 +56,14 @@ export const getMediumPosts = async () => {
   if (res.status < 200 || res.status >= 300) {
     throw new Error(`Error fetching Medium posts... Status code: ${res.status}, ${res.statusText}`);
   }
-  const medium_posts = await res.json();
+  const data = await res.json();
 
-  return medium_posts.map((post) => ({
-    slug: post.link.split('/').pop(),
+  return data.items.map((post) => ({
+    slug: post.link.split('?')[0].split('/').pop(),
     title: post.title,
-    description: post.content.substring(0, 200), // Example to extract first 200 chars
-    published_at: post.published,
-    likes: 0, // Medium doesn't provide likes data in this API
+    description: post.description.replace(/<[^>]*>?/gm, '').substring(0, 150),
+    published_at: post.pubDate,
+    likes: 0, // Medium API doesn't provide likes
     source: 'medium'
   }));
 };
