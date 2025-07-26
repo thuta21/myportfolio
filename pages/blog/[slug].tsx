@@ -5,7 +5,7 @@ import path from 'path';
 import matter from 'gray-matter';
 import html from 'remark-html';
 import {
-  Box,
+  // Box,
   Heading,
   VStack,
   Text,
@@ -30,9 +30,9 @@ import { MotionBox } from 'components/shared/animations/motion';
 import { fadeInUp, stagger } from 'components/shared/animations/page-transitions';
 import { motion } from 'framer-motion';
 import { usePostData } from 'lib/usePostData';
-import { LikeButton } from 'components/shared/LikeButton';
-import { useLinkColor } from 'components/theme';
-import { HeartIcon, CommentIcon, EyeIcon } from 'components/shared/icons';
+// import { LikeButton } from 'components/shared/LikeButton';
+// import { useLinkColor } from 'components/theme';
+import { CommentIcon, EyeIcon } from 'components/shared/icons';
 import DisplayText from 'components/shared/icons/DisplayText';
 
 dayjs.extend(localizedFormat);
@@ -45,13 +45,13 @@ export interface AllBlogProps {
 const POST_VIEW_LIMIT = 100;
 
 const ArticlePage: NextPage<AllBlogProps> = ({ articleContent, blogDetails }) => {
-  const { totalPostLikes, totalPostViews, isLoading, incrementViews } = usePostData(
+  const { totalPostViews, isLoading, incrementViews } = usePostData(
     blogDetails?.slug,
     blogDetails?.title
   );
   const [showLikeButton, setShowLikeButton] = useState(false);
   const borderColor = useColorModeValue('transparent', 'gray.700');
-  const linkColor = useLinkColor();
+  // const linkColor = useLinkColor();
 
   useEffect(() => {
     incrementViews();
@@ -72,13 +72,13 @@ const ArticlePage: NextPage<AllBlogProps> = ({ articleContent, blogDetails }) =>
       keywords={blogDetails?.tags.join(', ')}
     >
       <Collapse in={showLikeButton} animateOpacity>
-        <Box position="fixed" right="10%" top="50%" display={['none', 'none', 'none', 'block']}>
+        {/* <Box position="fixed" right="10%" top="50%" display={['none', 'none', 'none', 'block']}>
           <LikeButton
             id={blogDetails?.slug}
             title={blogDetails?.title}
             linkColor={linkColor}
           />
-        </Box>
+        </Box> */}
       </Collapse>
       <motion.div initial="initial" animate="animate" variants={stagger}>
         <VStack marginBottom="5" alignItems="left" textAlign="left">

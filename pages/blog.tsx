@@ -19,13 +19,13 @@ import matter from 'gray-matter';
 import { motion, AnimatePresence } from 'framer-motion';
 import PageLayout from 'components/layouts/pageLayout';
 import { BiSearch } from 'react-icons/bi';
-import { getDbPosts, getDevtoPosts, getMediumPosts } from 'lib/fetchPosts';
+import { getMediumPosts } from 'lib/fetchPosts';
 
 const TURQUOISE = '#06b6d4';
 
 const Posts = ({ posts: initialPosts }) => {
   const [searchValue, setSearchValue] = useState('');
-  const [posts, setPosts] = useState(initialPosts);
+  const [posts] = useState(initialPosts);
 
   const filteredBlogPosts = posts.filter((data) => {
     const searchContent = data.title + data.description;
@@ -94,8 +94,7 @@ const Posts = ({ posts: initialPosts }) => {
 const root = process.cwd();
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  let devtoPosts = await getDevtoPosts();
-  let mediumPosts = await getMediumPosts();
+  const mediumPosts = await getMediumPosts();
 
   const paths = fs.readdirSync(path.join(root, 'data', 'posts')).map((p) => p.replace(/\.mdx/, ''));
   const localPosts = [];
@@ -115,7 +114,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
     });
   });
 
-  const posts = [...localPosts, ...devtoPosts, ...mediumPosts];
+  const posts = [...localPosts, ...mediumPosts];
 
   if (!posts) {
     return {
