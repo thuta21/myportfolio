@@ -106,10 +106,10 @@ export const getServerSideProps: GetServerSideProps = async () => {
       slug: p,
       title: frontmatter.title,
       description: frontmatter.description,
-      published_at: frontmatter.published_at,
+      published_at: frontmatter.published_at || frontmatter.date || new Date().toISOString(),
       comments_count: frontmatter.comments_count || 0,
       public_reactions_count: frontmatter.public_reactions_count || 0,
-      tag_list: frontmatter.tags,
+      tag_list: frontmatter.tags || [],
       source: 'local'
     });
   });

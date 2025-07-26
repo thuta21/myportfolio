@@ -101,17 +101,17 @@ const PostCard: React.SFC<IProps> = ({ post, isLoading, postDbLikes }) => {
         >
           <Tooltip hasArrow label="Published" placement="top">
             <Text fontSize="sm" fontWeight="600" color={textColor}>
-              {moment(post.published_at).format('Do MMMM YYYY')}
+              {moment(post?.published_at).format('Do MMMM YYYY')}
             </Text>
           </Tooltip>
           <HStack spacing={2}>
-            {post.public_reactions_count || postDbLikes ? (
+            {post?.public_reactions_count || postDbLikes ? (
               <Tooltip hasArrow label="Reactions" placement="top">
                 <Flex alignItems="center" display={['flex', 'none', 'none']}>
                   <DisplayText
                     isLoading={isLoading}
                     value={
-                      (Number(post.public_reactions_count) || 0) + postDbLikes
+                      (Number(post?.public_reactions_count) || 0) + postDbLikes
                     }
                   />
                   &nbsp;
