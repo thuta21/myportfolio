@@ -54,7 +54,7 @@ const Home: React.FC<BlogPostProps> = (props) => {
               size={'2xl'}
               showBorder={true}
               borderColor={linkColor}
-              src={'https://avatars2.githubusercontent.com/u/37842853?v=4'}
+              src={'/assets/images/user_icon.png'}
             />
           </MotionBox>
         </MotionBox>
@@ -119,26 +119,27 @@ const Home: React.FC<BlogPostProps> = (props) => {
             </MotionBox>
           </Box>
           <Box as="h2" fontSize="2xl" fontWeight="400" textAlign="left">
-            My name is{' '}
-            <Box as="strong" fontWeight="600">
-              Thuta Min Thway
-            </Box>{' '}
-            and I&apos;m a{' '}
-            <Box as="span" whiteSpace="nowrap">
-              Full Stack Developer and
-            </Box>{' '}
-            <Box as="span" whiteSpace="nowrap">
-              an open source lover&nbsp;
-            </Box>
-            from{' '}
-            <Box as="span" whiteSpace="nowrap">
-              Thailand 🇹🇭
-            </Box>
-          </Box>
-          <Box as="h2" fontSize="2xl" fontWeight="400" mt={5} textAlign="left">
-            This is my digital garden, where I write about the things I&apos;m working on and share
-            what I&apos;ve learned. 😊
-          </Box>
+  My name is{' '}
+  <Box as="strong" fontWeight="600">
+    Thuta Min Thway
+  </Box>{' '}
+  and I&apos;m a{' '}
+  <Box as="span" whiteSpace="nowrap">
+    Full Stack Developer and
+  </Box>{' '}
+  <Box as="span" whiteSpace="nowrap">
+    an open source lover&nbsp;
+  </Box>{' '}
+  currently looking for job opportunities in{' '}
+  <Box as="span" whiteSpace="nowrap">
+    Dubai 🇦🇪
+  </Box>
+</Box>
+
+<Box as="h2" fontSize="2xl" fontWeight="400" mt={5} textAlign="left">
+  This is my digital garden, where I write about the things I&apos;m working on and share
+  what I&apos;ve learned. 😊
+</Box>
         </MotionFlex>
       </Flex>
 
@@ -193,7 +194,7 @@ const ContentBox = ({ linkColor }) => {
         fromcolor="blue.400"
         tocolor="red.500"
       >
-        <a className='px-3' href="thutaminthway.pdf" download="thutaminthway.pdf">
+        <a className='px-3' href="documents/ThutaMinThwayResume.pdf" download="ThutaMinThwayResume.pdf">
             Click Here To Download CV
         </a>
       </Text>
