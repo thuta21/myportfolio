@@ -80,15 +80,15 @@ export const projectsList = [
       'Built and maintained an events management system for IMSRS. Used Strapi as a headless CMS with dynamic content loading through Next.js.',
     techStack: ['React.js', 'Next.js', 'TypeScript', 'TailwindCSS', 'Strapi', 'JavaScript', 'HTML', 'CSS']
   },
-  {
-    title: 'LevelUp – Event Management Platform',
-    imageLight: '/assets/images/projects/levelup.png',
-    blurHash: 'L4ADc400P*Zi4Tu1y;Qo00pH#YXl',
-    site: 'https://levelup.holdings/en',
-    description:
-      'Developed an event platform using a modern tech stack with a fully responsive and performant UI. Integrated a headless CMS using Strapi and styled the frontend with TailwindCSS.',
-    techStack: ['React.js', 'Next.js', 'TailwindCSS', 'Strapi', 'JavaScript', 'HTML', 'CSS']
-  },
+  // {
+  //   title: 'LevelUp – Event Management Platform',
+  //   imageLight: '/assets/images/projects/levelup.png',
+  //   blurHash: 'L4ADc400P*Zi4Tu1y;Qo00pH#YXl',
+  //   site: 'https://levelup.holdings/en',
+  //   description:
+  //     'Developed an event platform using a modern tech stack with a fully responsive and performant UI. Integrated a headless CMS using Strapi and styled the frontend with TailwindCSS.',
+  //   techStack: ['React.js', 'Next.js', 'TailwindCSS', 'Strapi', 'JavaScript', 'HTML', 'CSS']
+  // },
   {
     title: 'The GoodLife by CMHL',
     imageLight: '/assets/images/projects/city.png',
