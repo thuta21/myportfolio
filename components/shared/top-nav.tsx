@@ -173,7 +173,7 @@ export default function TopNav() {
                   size={'sm'}
                   showBorder={true}
                   borderColor={linkColor}
-                  src={'/assets/images/user_icon.png'}
+                  src={'/assets/images/user_icon.jpg'}
                 />
               </NextLink>
             </MotionBox>

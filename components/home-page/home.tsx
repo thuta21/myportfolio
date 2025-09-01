@@ -54,7 +54,7 @@ const Home: React.FC<BlogPostProps> = (props) => {
               size={'2xl'}
               showBorder={true}
               borderColor={linkColor}
-              src={'/assets/images/user_icon.png'}
+              src={'/assets/images/user_icon.jpg'}
             />
           </MotionBox>
         </MotionBox>
